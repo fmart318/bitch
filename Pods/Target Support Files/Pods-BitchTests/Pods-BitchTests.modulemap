@@ -1,0 +1,6 @@
+framework module Pods_BitchTests {
+  umbrella header "Pods-BitchTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

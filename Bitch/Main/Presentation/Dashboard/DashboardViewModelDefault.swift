@@ -11,7 +11,7 @@ import FBSDKLoginKit
 
 class DashboardViewModelDefault {
     var view: DashboardView?
-    var coordinator: DashboardCoordinator?
+    var coordinator: AppCoordinator?
 }
 
 extension DashboardViewModelDefault: DashboardViewModel {

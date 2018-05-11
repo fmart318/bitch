@@ -10,8 +10,10 @@ import UIKit
 
 class ComposeController: UIViewController {
     
-    private let viewModel: ComposeViewModel
+    @IBOutlet weak var textView: UITextView!
     
+    private let viewModel: ComposeViewModel
+
     init(viewModel: ComposeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "ComposeController", bundle: nil)
@@ -24,6 +26,16 @@ class ComposeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+    }
+}
+
+extension ComposeController {
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        viewModel.deleteButtonTapped()
+    }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
     }
 }
 

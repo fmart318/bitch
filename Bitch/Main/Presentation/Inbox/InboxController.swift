@@ -14,6 +14,10 @@ class InboxController: UIViewController {
     
     private let viewModel: InboxViewModel
     
+    private struct Localizations {
+        static let title = "Inbox"
+    }
+    
     init(viewModel: InboxViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "InboxController", bundle: nil)
@@ -28,6 +32,23 @@ class InboxController: UIViewController {
         viewModel.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setup()
+    }
+    
+    func setup() {
+        setupHeader()
+    }
+    
+    func setupHeader() {
+        title = Localizations.title
+        let composeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeButtonTapped))
+        navigationItem.rightBarButtonItem = composeButton
+    }
+}
+
+extension InboxController {
+    @objc func composeButtonTapped() {
+        viewModel.composeButtonTapped()
     }
 }
 

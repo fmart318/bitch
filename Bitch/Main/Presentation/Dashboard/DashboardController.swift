@@ -17,6 +17,11 @@ class DashboardController: UIViewController {
     @IBOutlet weak var inboxButton: UIButton!
     
     private let viewModel: DashboardViewModel
+    
+    private struct Localizations {
+        static let title = "Dashboard"
+        static let defaultFacebookName = "Guest"
+    }
 
     init(viewModel: DashboardViewModel) {
         self.viewModel = viewModel
@@ -34,7 +39,12 @@ class DashboardController: UIViewController {
     }
     
     private func setup() {
+        setupHeader()
         setupButtons()
+    }
+    
+    private func setupHeader() {
+        title = Localizations.title
     }
     
     private func setupButtons() {
@@ -51,15 +61,11 @@ extension DashboardController {
 extension DashboardController: DashboardView {
     func showProfile(_ profile: FBSDKProfile) {
         facebookName.text = profile.firstName + " " + profile.lastName
-        inboxButton.isHidden = false
-        facebookPicture.isHidden = false
         facebookPicture.profileID = FBSDKAccessToken.current().userID
     }
     
     func removeProfile() {
-        facebookName.text = ""
-        facebookPicture.isHidden = true
-        inboxButton.isHidden = true
+        facebookName.text = Localizations.defaultFacebookName
         facebookPicture.profileID = ""
     }
 }

@@ -8,10 +8,19 @@
 
 class ComposeViewModelDefault {
     var view: ComposeView?
+    var coordinator: AppCoordinator
+    
+    init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
+    }
 }
 
 extension ComposeViewModelDefault: ComposeViewModel {
     func viewDidLoad() {
         
+    }
+    
+    func deleteButtonTapped() {
+        self.coordinator.closeCompose()
     }
 }

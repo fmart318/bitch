@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,13 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-Y8-NU0">
-                    <rect key="frame" x="110" y="83.5" width="155.5" height="39.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-Ro-qe2">
-                    <rect key="frame" x="137" y="123" width="100" height="40"/>
+                    <rect key="frame" x="137" y="70" width="100" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ie8-F8-dGS"/>
                         <constraint firstAttribute="width" constant="100" id="VfR-Gp-SrO"/>
@@ -44,7 +38,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkt-ke-gCo">
-                    <rect key="frame" x="187" y="163" width="0.0" height="69"/>
+                    <rect key="frame" x="187" y="130" width="0.0" height="102"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -71,11 +65,9 @@
                 <constraint firstItem="6ci-AO-m7h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="YKn-w6-rJc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0IW-qs-Fyg" secondAttribute="bottom" constant="20" id="Zdz-qA-NFz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6ci-AO-m7h" secondAttribute="trailing" constant="20" id="dpX-3U-LSs"/>
-                <constraint firstItem="9xx-Y8-NU0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.3" id="dtu-BT-7UW"/>
+                <constraint firstItem="KAA-Ro-qe2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="gwp-jd-CGs"/>
                 <constraint firstItem="0IW-qs-Fyg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="hcl-6T-R2T"/>
-                <constraint firstItem="KAA-Ro-qe2" firstAttribute="top" secondItem="9xx-Y8-NU0" secondAttribute="bottom" id="pVD-6Z-lrb"/>
-                <constraint firstItem="Fkt-ke-gCo" firstAttribute="top" secondItem="KAA-Ro-qe2" secondAttribute="bottom" id="txU-UE-S2M"/>
-                <constraint firstItem="9xx-Y8-NU0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="x6S-dc-MrS"/>
+                <constraint firstItem="Fkt-ke-gCo" firstAttribute="top" secondItem="KAA-Ro-qe2" secondAttribute="bottom" constant="20" id="txU-UE-S2M"/>
                 <constraint firstItem="KAA-Ro-qe2" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="zMO-tT-p1N"/>
                 <constraint firstItem="0IW-qs-Fyg" firstAttribute="top" secondItem="6ci-AO-m7h" secondAttribute="bottom" constant="20" id="zqk-So-9Z2"/>
             </constraints>

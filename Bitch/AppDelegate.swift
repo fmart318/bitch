@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewModel.view = controller
         
         let navigationController = UINavigationController.init(rootViewController: controller)
-        let coordinator = DashboardCoordinatorDefault(navigationController: navigationController)
+        let coordinator = AppCoordinatorDefault(navigationController: navigationController)
         viewModel.coordinator = coordinator
         
         window.rootViewController = navigationController

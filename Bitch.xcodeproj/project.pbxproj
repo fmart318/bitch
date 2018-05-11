@@ -13,8 +13,6 @@
 		5542543220A5121F007C8803 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542543120A5121F007C8803 /* DashboardView.swift */; };
 		5545CB7D20A62C65001B1426 /* SendMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB7C20A62C65001B1426 /* SendMessageAction.swift */; };
 		5545CB7F20A62DAD001B1426 /* RepositoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB7E20A62DAD001B1426 /* RepositoryFirebase.swift */; };
-		5545CB8120A62EF6001B1426 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB8020A62EF6001B1426 /* NetworkClient.swift */; };
-		5545CB8320A6300D001B1426 /* NetworkClientDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB8220A6300D001B1426 /* NetworkClientDefault.swift */; };
 		55596F611F91547800F40C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55596F601F91547800F40C17 /* AppDelegate.swift */; };
 		55596F631F91547800F40C17 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55596F621F91547800F40C17 /* DashboardController.swift */; };
 		55596F681F91547800F40C17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55596F671F91547800F40C17 /* Assets.xcassets */; };
@@ -23,6 +21,7 @@
 		55596F811F91547800F40C17 /* BitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55596F801F91547800F40C17 /* BitchUITests.swift */; };
 		55596F921F91581900F40C17 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55596F911F91581900F40C17 /* DashboardViewModel.swift */; };
 		55596F941F91592100F40C17 /* DashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55596F931F91592100F40C17 /* DashboardController.xib */; };
+		5565C92120A645DF0045F326 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565C92020A645DF0045F326 /* LoadingView.swift */; };
 		55F7FFC720A5425400B34127 /* InboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7FFC620A5425400B34127 /* InboxController.swift */; };
 		55F7FFC920A5428000B34127 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7FFC820A5428000B34127 /* InboxView.swift */; };
 		55F7FFCB20A542CC00B34127 /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7FFCA20A542CC00B34127 /* InboxViewModel.swift */; };
@@ -69,8 +68,6 @@
 		5542543120A5121F007C8803 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		5545CB7C20A62C65001B1426 /* SendMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageAction.swift; sourceTree = "<group>"; };
 		5545CB7E20A62DAD001B1426 /* RepositoryFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFirebase.swift; sourceTree = "<group>"; };
-		5545CB8020A62EF6001B1426 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		5545CB8220A6300D001B1426 /* NetworkClientDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientDefault.swift; sourceTree = "<group>"; };
 		55596F5D1F91547800F40C17 /* Bitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55596F601F91547800F40C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55596F621F91547800F40C17 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
@@ -85,6 +82,7 @@
 		55596F821F91547800F40C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55596F911F91581900F40C17 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		55596F931F91592100F40C17 /* DashboardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardController.xib; sourceTree = "<group>"; };
+		5565C92020A645DF0045F326 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		55F7FFC620A5425400B34127 /* InboxController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxController.swift; sourceTree = "<group>"; };
 		55F7FFC820A5428000B34127 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		55F7FFCA20A542CC00B34127 /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				55F7FFDF20A54AE300B34127 /* AppCoordinator.swift */,
 				55F7FFE120A54B1E00B34127 /* AppCoordinatorDefault.swift */,
 				5545CB7E20A62DAD001B1426 /* RepositoryFirebase.swift */,
-				5545CB8220A6300D001B1426 /* NetworkClientDefault.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -213,6 +210,14 @@
 			path = BitchUITests;
 			sourceTree = "<group>";
 		};
+		5565C91F20A645C20045F326 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5565C92020A645DF0045F326 /* LoadingView.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		55F7FFC420A5421300B34127 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +231,7 @@
 		55F7FFC520A5422300B34127 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5565C91F20A645C20045F326 /* Util */,
 				5545CB7A20A61B73001B1426 /* Dashboard */,
 				55F7FFD320A5461E00B34127 /* Compose */,
 				55F7FFD020A5448F00B34127 /* Inbox */,
@@ -304,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				F179BB5C20A60F8400A95052 /* Repository.swift */,
-				5545CB8020A62EF6001B1426 /* NetworkClient.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -585,6 +591,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -622,8 +629,7 @@
 				55F7FFCD20A542DB00B34127 /* InboxViewModelDefault.swift in Sources */,
 				55F7FFC720A5425400B34127 /* InboxController.swift in Sources */,
 				5545CB7F20A62DAD001B1426 /* RepositoryFirebase.swift in Sources */,
-				5545CB8120A62EF6001B1426 /* NetworkClient.swift in Sources */,
-				5545CB8320A6300D001B1426 /* NetworkClientDefault.swift in Sources */,
+				5565C92120A645DF0045F326 /* LoadingView.swift in Sources */,
 				55596F921F91581900F40C17 /* DashboardViewModel.swift in Sources */,
 				55F7FFD920A5464F00B34127 /* ComposeViewModelDefault.swift in Sources */,
 				F179BB5A20A60F5200A95052 /* BaseAction.swift in Sources */,

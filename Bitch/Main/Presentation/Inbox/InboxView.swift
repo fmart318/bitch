@@ -7,5 +7,7 @@
 //
 
 protocol InboxView {
-    func showMessages()
+    func showLoading()
+    func hideLoading()
+    func reloadTable()
 }

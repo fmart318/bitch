@@ -10,6 +10,7 @@ import UIKit
 
 class AppCoordinatorDefault {
     private let navigationController: UINavigationController
+    private let repository = RepositoryFirebase(userId:"1")
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -18,14 +19,13 @@ class AppCoordinatorDefault {
 
 extension AppCoordinatorDefault: AppCoordinator {
     func goToInbox() {
-        let viewModel = InboxViewModelDefault(coordinator: self, getMessagesAction: GetMessagesActionDefault())
+        let viewModel = InboxViewModelDefault(coordinator: self, getMessagesAction: GetMessagesActionDefault(repository: repository))
         let controller = InboxController(viewModel: viewModel)
         viewModel.view = controller
         navigationController.pushViewController(controller, animated: true)
     }
     
     func goToCompose() {
-        let repository = RepositoryFirebase(userId:"1" , networkClient: NetworkClientDefault())
         let viewModel = ComposeViewModelDefault(coordinator: self, sendMessageAction: SendMessageActionDefault(repository:repository))
         let controller = ComposeController(viewModel: viewModel)
         viewModel.view = controller

@@ -8,8 +8,9 @@
 
 class InboxViewModelDefault {
     var view: InboxView?
-    var getMessagesAction: GetMessagesAction?
+    var getMessagesAction: GetMessagesAction
     let coordinator: AppCoordinator
+    var messages = Array<String>()
     
     init(coordinator: AppCoordinator, getMessagesAction: GetMessagesAction) {
         self.coordinator = coordinator
@@ -18,13 +19,17 @@ class InboxViewModelDefault {
 }
 
 extension InboxViewModelDefault: InboxViewModel {
-    func composeButtonTapped() {
-        coordinator.goToCompose()
+    func viewWillAppear() {
+        view?.showLoading()
+        getMessagesAction.execute(success: { (messages) in
+            self.messages = messages
+            self.view?.reloadTable()
+        }) { (Error) in
+            self.view?.hideLoading()
+        }
     }
     
-    var messages: Array<String> { return ["message1", "message2", "message3"] }
-    
-    func viewDidLoad() {
-        
+    func composeButtonTapped() {
+        coordinator.goToCompose()
     }
 }

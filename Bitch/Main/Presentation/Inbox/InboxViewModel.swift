@@ -8,6 +8,6 @@
 
 protocol InboxViewModel {
     var messages: Array<String> { get }
-    func viewDidLoad()
+    func viewWillAppear()
     func composeButtonTapped()
 }

@@ -6,21 +6,31 @@
 //  Copyright © 2018 Felipe Martinez. All rights reserved.
 //
 
+import FirebaseDatabase
+
 class RepositoryFirebase {
     private let userId: String
-    private let networkClient: NetworkClient
+    private let database: DatabaseReference
     
-    init(userId: String, networkClient: NetworkClient) {
+    init(userId: String) {
         self.userId = userId
-        self.networkClient = networkClient
+        self.database = Database.database().reference()
     }
 }
 
 extension RepositoryFirebase: Repository {
+    func getMessages(success: @escaping (Array<String>) -> Void, failure: @escaping (Error) -> Void) {
+        let path = "users/\(userId)/messages/"
+        database.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
+            let messageDictionary = snapshot.value as? NSDictionary
+            success(messageDictionary?.allValues as! Array<String>)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     func sendMessage(message: String, success: @escaping () -> Void, failure: @escaping (Error) -> Void) {
-        let firebasePath = "users/\(userId)/messages/"
-        networkClient.post(path: firebasePath, parameters: nil, success: { (json, response) in
-            success()
-        }, failure: failure)
+        let path = "users/\(userId)/messages/"
+        database.child(path).childByAutoId().setValue(message)
     }
 }

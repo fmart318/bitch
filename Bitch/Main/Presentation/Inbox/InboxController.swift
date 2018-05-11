@@ -11,6 +11,7 @@ import UIKit
 class InboxController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    private var loadingView: LoadingView!
     
     private let viewModel: InboxViewModel
     
@@ -29,20 +30,36 @@ class InboxController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
+    }
+    
     func setup() {
         setupHeader()
+        setupLoadingView()
     }
     
     func setupHeader() {
         title = Localizations.title
         let composeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeButtonTapped))
         navigationItem.rightBarButtonItem = composeButton
+    }
+    
+    func setupLoadingView() {
+        loadingView = LoadingView(frame: view.bounds)
+        loadingView.isHidden = true
+        if let view = navigationController?.view {
+            view.addSubview(loadingView)
+            loadingView.snp.makeConstraints { (make) in
+                make.edges.equalTo(view)
+            }
+        }
     }
 }
 
@@ -53,8 +70,17 @@ extension InboxController {
 }
 
 extension InboxController: InboxView {
-    func showMessages() {
-        
+    func showLoading() {
+        loadingView.isHidden = false
+    }
+    
+    func hideLoading() {
+        loadingView.isHidden = true
+    }
+    
+    func reloadTable() {
+        hideLoading()
+        tableView.reloadData()
     }
 }
 

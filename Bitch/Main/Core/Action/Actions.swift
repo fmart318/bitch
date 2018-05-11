@@ -7,7 +7,7 @@
 //
 
 protocol GetMessagesAction {
-    func execute(success: @escaping (Array<String>?) -> Void, failure: @escaping (Error) -> Void)
+    func execute(success: @escaping (Array<String>) -> Void, failure: @escaping (Error) -> Void)
 }
 
 protocol SendMessageAction {

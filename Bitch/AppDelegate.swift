@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        setupFirebase()
+        setupFacebook(application, didFinishLaunchingWithOptions: launchOptions)
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             setupRootViewController(window: window)
         }
-        setupFirebase()
-        setupFacebook(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
     

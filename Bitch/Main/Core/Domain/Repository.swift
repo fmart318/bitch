@@ -8,4 +8,5 @@
 
 protocol Repository {
     func sendMessage(message: String, success: @escaping () -> Void, failure: @escaping (Error) -> Void)
+    func getMessages(success: @escaping (Array<String>) -> Void, failure: @escaping (Error) -> Void)
 }

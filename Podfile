@@ -13,6 +13,7 @@ target 'Bitch' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'SwiftyJSON'
+  pod 'SnapKit'
   
   target 'BitchTests' do
     inherit! :search_paths

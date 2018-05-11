@@ -11,19 +11,22 @@ import FBSDKLoginKit
 
 class DashboardViewModelDefault {
     var view: DashboardView?
+    var coordinator: DashboardCoordinator?
 }
 
 extension DashboardViewModelDefault: DashboardViewModel {
     func viewDidLoad() {
+        setupNotifications()
+        loadUser()
+    }
+    
+    private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(loadUser), name: NSNotification.Name.FBSDKAccessTokenDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadUser), name: NSNotification.Name.FBSDKProfileDidChange, object: nil)
     }
     
     func inboxButtonTapped() {
-//        let viewModel = InboxViewModelDefault()
-//        let controller = InboxController(viewModel: viewModel)
-//        viewModel.view = controller
-//        pushViewController(controller, animated: true)
+        coordinator?.goToInbox()
     }
     
     @objc private func loadUser() {

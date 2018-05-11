@@ -44,12 +44,7 @@ class DashboardController: UIViewController {
 
 extension DashboardController {
     @IBAction func inboxButtonTapped(_ sender: Any) {
-//        viewModel.inboxButtonTapped()
-        let viewModel = InboxViewModelDefault()
-        let controller = InboxController(viewModel: viewModel)
-        viewModel.view = controller
-        
-//        pushViewController(controller, animated: true)
+        viewModel.inboxButtonTapped()
     }
 }
 

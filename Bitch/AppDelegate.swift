@@ -18,16 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
-            let viewModel = DashboardViewModelDefault()
-            let controller = DashboardController(viewModel: viewModel)
-            viewModel.view = controller
-
-            window.rootViewController = controller
-            window.makeKeyAndVisible()
+            setupRootViewController(window: window)
         }
-        FirebaseApp.configure()
-        FBSDKApplicationDelegate.sharedInstance().application(application,
-                                                              didFinishLaunchingWithOptions:launchOptions)
+        setupFirebase()
+        setupFacebook(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
     
@@ -57,6 +51,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func setupRootViewController(window: UIWindow) {
+        let viewModel = DashboardViewModelDefault()
+        let controller = DashboardController(viewModel: viewModel)
+        viewModel.view = controller
+        
+        let navigationController = UINavigationController.init(rootViewController: controller)
+        let coordinator = DashboardCoordinatorDefault(navigationController: navigationController)
+        viewModel.coordinator = coordinator
+        
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+    }
+    
+    func setupFirebase() {
+        FirebaseApp.configure()
+    }
+    
+    func setupFacebook(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+        FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                              didFinishLaunchingWithOptions:launchOptions)
+    }
 }
 

@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InboxController" customModule="Bitch" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="tu6-VQ-pqu" id="Ztk-I3-eVF"/>
+                <outlet property="view" destination="iN0-l3-epB" id="bfd-J9-Jeb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

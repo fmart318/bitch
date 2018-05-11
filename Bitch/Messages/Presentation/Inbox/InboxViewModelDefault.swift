@@ -8,9 +8,16 @@
 
 class InboxViewModelDefault {
     var view: InboxView?
+    var getMessagesAction: GetMessagesAction?
+    
+    init(getMessagesAction: GetMessagesAction) {
+        self.getMessagesAction = getMessagesAction
+    }
 }
 
 extension InboxViewModelDefault: InboxViewModel {
+    var messages: Array<String> { return ["message1", "message2", "message3"] }
+    
     func viewDidLoad() {
         
     }

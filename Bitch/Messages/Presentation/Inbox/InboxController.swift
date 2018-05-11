@@ -14,8 +14,6 @@ class InboxController: UIViewController {
     
     private let viewModel: InboxViewModel
     
-    var postData = ["message1", "message2", "message3"]
-    
     init(viewModel: InboxViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "InboxController", bundle: nil)
@@ -42,15 +40,16 @@ extension InboxController: InboxView {
 extension InboxController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+        return viewModel.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") {
-            cell.textLabel?.text = postData[indexPath.row]
-            return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell")
+        if cell == nil {
+            cell = UITableViewCell()
+            cell?.textLabel?.text = viewModel.messages[indexPath.row]
         }
-        return UITableViewCell()
+        return cell!
     }
 }
 

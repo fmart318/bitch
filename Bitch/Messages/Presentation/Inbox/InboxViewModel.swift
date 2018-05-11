@@ -7,5 +7,6 @@
 //
 
 protocol InboxViewModel {
+    var messages: Array<String> { get }
     func viewDidLoad()
 }

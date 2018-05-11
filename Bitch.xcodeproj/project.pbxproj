@@ -33,6 +33,10 @@
 		55F7FFE220A54B1E00B34127 /* DashboardCoordinatorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7FFE120A54B1E00B34127 /* DashboardCoordinatorDefault.swift */; };
 		627643101B2E14612C1F9858 /* Pods_BitchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE980CE23217F5C8D162091E /* Pods_BitchUITests.framework */; };
 		96F937B1A99385BC61056E5A /* Pods_BitchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFEC7513EEE219BF414E61A /* Pods_BitchTests.framework */; };
+		F179BB5620A60CF400A95052 /* GetMessagesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179BB5520A60CF400A95052 /* GetMessagesAction.swift */; };
+		F179BB5820A60ED600A95052 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179BB5720A60ED600A95052 /* Actions.swift */; };
+		F179BB5A20A60F5200A95052 /* BaseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179BB5920A60F5200A95052 /* BaseAction.swift */; };
+		F179BB5D20A60F8400A95052 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179BB5C20A60F8400A95052 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		BBFEC7513EEE219BF414E61A /* Pods_BitchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C156ABF050C8E54B7C41B11B /* Pods_Bitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE3062B1A6F86452280DA2E /* Pods-BitchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitchUITests/Pods-BitchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F179BB5520A60CF400A95052 /* GetMessagesAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessagesAction.swift; sourceTree = "<group>"; };
+		F179BB5720A60ED600A95052 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		F179BB5920A60F5200A95052 /* BaseAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAction.swift; sourceTree = "<group>"; };
+		F179BB5C20A60F8400A95052 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +240,7 @@
 		55F7FFC420A5421300B34127 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				F179BB5320A60CE100A95052 /* Core */,
 				55F7FFC520A5422300B34127 /* Presentation */,
 			);
 			path = Messages;
@@ -291,6 +300,33 @@
 				AE980CE23217F5C8D162091E /* Pods_BitchUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F179BB5320A60CE100A95052 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F179BB5420A60CE600A95052 /* Action */,
+				F179BB5B20A60F7900A95052 /* Domain */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F179BB5420A60CE600A95052 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				F179BB5520A60CF400A95052 /* GetMessagesAction.swift */,
+				F179BB5720A60ED600A95052 /* Actions.swift */,
+				F179BB5920A60F5200A95052 /* BaseAction.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		F179BB5B20A60F7900A95052 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F179BB5C20A60F8400A95052 /* Repository.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,10 +641,14 @@
 				55F7FFC720A5425400B34127 /* InboxController.swift in Sources */,
 				55596F921F91581900F40C17 /* DashboardViewModel.swift in Sources */,
 				55F7FFD920A5464F00B34127 /* ComposeViewModelDefault.swift in Sources */,
+				F179BB5A20A60F5200A95052 /* BaseAction.swift in Sources */,
+				F179BB5620A60CF400A95052 /* GetMessagesAction.swift in Sources */,
 				55F7FFDB20A5464F00B34127 /* ComposeController.swift in Sources */,
 				55596F631F91547800F40C17 /* DashboardController.swift in Sources */,
 				55F7FFDC20A5464F00B34127 /* ComposeViewModel.swift in Sources */,
 				5542543220A5121F007C8803 /* DashboardView.swift in Sources */,
+				F179BB5820A60ED600A95052 /* Actions.swift in Sources */,
+				F179BB5D20A60F8400A95052 /* Repository.swift in Sources */,
 				55F7FFC920A5428000B34127 /* InboxView.swift in Sources */,
 				55596F611F91547800F40C17 /* AppDelegate.swift in Sources */,
 				55F7FFE220A54B1E00B34127 /* DashboardCoordinatorDefault.swift in Sources */,

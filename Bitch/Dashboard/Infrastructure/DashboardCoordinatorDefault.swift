@@ -18,7 +18,7 @@ class DashboardCoordinatorDefault {
 
 extension DashboardCoordinatorDefault: DashboardCoordinator {
     func goToInbox() {
-        let viewModel = InboxViewModelDefault()
+        let viewModel = InboxViewModelDefault(getMessagesAction: GetMessagesActionDefault())
         let controller = InboxController(viewModel: viewModel)
         viewModel.view = controller
         navigationController.pushViewController(controller, animated: true)

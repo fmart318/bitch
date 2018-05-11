@@ -11,6 +11,10 @@
 		5542542420A50740007C8803 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5542542320A50740007C8803 /* GoogleService-Info.plist */; };
 		5542543020A510BA007C8803 /* DashboardViewModelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542542F20A510BA007C8803 /* DashboardViewModelDefault.swift */; };
 		5542543220A5121F007C8803 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542543120A5121F007C8803 /* DashboardView.swift */; };
+		5545CB7D20A62C65001B1426 /* SendMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB7C20A62C65001B1426 /* SendMessageAction.swift */; };
+		5545CB7F20A62DAD001B1426 /* RepositoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB7E20A62DAD001B1426 /* RepositoryFirebase.swift */; };
+		5545CB8120A62EF6001B1426 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB8020A62EF6001B1426 /* NetworkClient.swift */; };
+		5545CB8320A6300D001B1426 /* NetworkClientDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545CB8220A6300D001B1426 /* NetworkClientDefault.swift */; };
 		55596F611F91547800F40C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55596F601F91547800F40C17 /* AppDelegate.swift */; };
 		55596F631F91547800F40C17 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55596F621F91547800F40C17 /* DashboardController.swift */; };
 		55596F681F91547800F40C17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55596F671F91547800F40C17 /* Assets.xcassets */; };
@@ -63,6 +67,10 @@
 		5542542320A50740007C8803 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5542542F20A510BA007C8803 /* DashboardViewModelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelDefault.swift; sourceTree = "<group>"; };
 		5542543120A5121F007C8803 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		5545CB7C20A62C65001B1426 /* SendMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageAction.swift; sourceTree = "<group>"; };
+		5545CB7E20A62DAD001B1426 /* RepositoryFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFirebase.swift; sourceTree = "<group>"; };
+		5545CB8020A62EF6001B1426 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		5545CB8220A6300D001B1426 /* NetworkClientDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientDefault.swift; sourceTree = "<group>"; };
 		55596F5D1F91547800F40C17 /* Bitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55596F601F91547800F40C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55596F621F91547800F40C17 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 			children = (
 				55F7FFDF20A54AE300B34127 /* AppCoordinator.swift */,
 				55F7FFE120A54B1E00B34127 /* AppCoordinatorDefault.swift */,
+				5545CB7E20A62DAD001B1426 /* RepositoryFirebase.swift */,
+				5545CB8220A6300D001B1426 /* NetworkClientDefault.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -282,9 +292,10 @@
 		F179BB5420A60CE600A95052 /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				F179BB5520A60CF400A95052 /* GetMessagesAction.swift */,
 				F179BB5720A60ED600A95052 /* Actions.swift */,
 				F179BB5920A60F5200A95052 /* BaseAction.swift */,
+				5545CB7C20A62C65001B1426 /* SendMessageAction.swift */,
+				F179BB5520A60CF400A95052 /* GetMessagesAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -293,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				F179BB5C20A60F8400A95052 /* Repository.swift */,
+				5545CB8020A62EF6001B1426 /* NetworkClient.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -562,6 +574,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -572,6 +585,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -607,6 +621,9 @@
 			files = (
 				55F7FFCD20A542DB00B34127 /* InboxViewModelDefault.swift in Sources */,
 				55F7FFC720A5425400B34127 /* InboxController.swift in Sources */,
+				5545CB7F20A62DAD001B1426 /* RepositoryFirebase.swift in Sources */,
+				5545CB8120A62EF6001B1426 /* NetworkClient.swift in Sources */,
+				5545CB8320A6300D001B1426 /* NetworkClientDefault.swift in Sources */,
 				55596F921F91581900F40C17 /* DashboardViewModel.swift in Sources */,
 				55F7FFD920A5464F00B34127 /* ComposeViewModelDefault.swift in Sources */,
 				F179BB5A20A60F5200A95052 /* BaseAction.swift in Sources */,
@@ -615,6 +632,7 @@
 				55596F631F91547800F40C17 /* DashboardController.swift in Sources */,
 				55F7FFDC20A5464F00B34127 /* ComposeViewModel.swift in Sources */,
 				5542543220A5121F007C8803 /* DashboardView.swift in Sources */,
+				5545CB7D20A62C65001B1426 /* SendMessageAction.swift in Sources */,
 				F179BB5820A60ED600A95052 /* Actions.swift in Sources */,
 				F179BB5D20A60F8400A95052 /* Repository.swift in Sources */,
 				55F7FFC920A5428000B34127 /* InboxView.swift in Sources */,

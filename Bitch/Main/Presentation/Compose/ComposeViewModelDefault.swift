@@ -8,10 +8,12 @@
 
 class ComposeViewModelDefault {
     var view: ComposeView?
-    var coordinator: AppCoordinator
+    let coordinator: AppCoordinator
+    let sendMessageAction: SendMessageAction
     
-    init(coordinator: AppCoordinator) {
+    init(coordinator: AppCoordinator, sendMessageAction: SendMessageAction) {
         self.coordinator = coordinator
+        self.sendMessageAction = sendMessageAction
     }
 }
 
@@ -20,7 +22,15 @@ extension ComposeViewModelDefault: ComposeViewModel {
         
     }
     
-    func deleteButtonTapped() {
+    func cancelButtonTapped() {
         self.coordinator.closeCompose()
+    }
+    
+    func sendButtonTapped(message: String) {
+        sendMessageAction.execute(message: message, success: {
+            
+        }) { (Error) in
+            
+        }
     }
 }

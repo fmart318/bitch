@@ -7,5 +7,5 @@
 //
 
 protocol Repository {
-    
+    func sendMessage(message: String, success: @escaping () -> Void, failure: @escaping (Error) -> Void)
 }

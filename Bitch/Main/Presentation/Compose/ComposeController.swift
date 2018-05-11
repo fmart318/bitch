@@ -30,12 +30,12 @@ class ComposeController: UIViewController {
 }
 
 extension ComposeController {
-    @IBAction func deleteButtonTapped(_ sender: Any) {
-        viewModel.deleteButtonTapped()
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        viewModel.cancelButtonTapped()
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
-        
+    @IBAction func sendButtonTapped(_ sender: Any) {
+        viewModel.sendButtonTapped(message: textView.text)
     }
 }
 

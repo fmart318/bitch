@@ -25,7 +25,8 @@ extension AppCoordinatorDefault: AppCoordinator {
     }
     
     func goToCompose() {
-        let viewModel = ComposeViewModelDefault(coordinator: self)
+        let repository = RepositoryFirebase(userId:"1" , networkClient: NetworkClientDefault())
+        let viewModel = ComposeViewModelDefault(coordinator: self, sendMessageAction: SendMessageActionDefault(repository:repository))
         let controller = ComposeController(viewModel: viewModel)
         viewModel.view = controller
         navigationController.present(controller, animated: true, completion: nil)

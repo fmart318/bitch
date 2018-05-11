@@ -8,5 +8,6 @@
 
 protocol ComposeViewModel {
     func viewDidLoad()
-    func deleteButtonTapped()
+    func cancelButtonTapped()
+    func sendButtonTapped(message: String)
 }

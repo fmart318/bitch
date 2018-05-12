@@ -14,6 +14,8 @@ target 'Bitch' do
   pod 'FBSDKShareKit'
   pod 'SwiftyJSON'
   pod 'SnapKit'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Facebook'
   
   target 'BitchTests' do
     inherit! :search_paths

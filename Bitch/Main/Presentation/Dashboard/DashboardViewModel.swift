@@ -6,7 +6,9 @@
 //  Copyright © 2017 Felipe Martinez. All rights reserved.
 //
 
-protocol DashboardViewModel {
+import FBSDKLoginKit
+
+protocol DashboardViewModel: FBSDKLoginButtonDelegate {
     func viewDidLoad()
     func inboxButtonTapped()
 }

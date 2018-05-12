@@ -26,7 +26,7 @@ class LoadingView: UIView {
     }
     
     private func setupBackground() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        backgroundColor = UIColor.black.withAlphaComponent(0.6)
     }
     
     private func setupIndicator() {

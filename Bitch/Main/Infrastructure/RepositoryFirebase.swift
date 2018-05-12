@@ -22,8 +22,11 @@ extension RepositoryFirebase: Repository {
     func getMessages(success: @escaping (Array<String>) -> Void, failure: @escaping (Error) -> Void) {
         let path = "users/\(userId)/messages/"
         database.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
-            let messageDictionary = snapshot.value as? NSDictionary
-            success(messageDictionary?.allValues as! Array<String>)
+            var messages = Array<String>()
+            if let snapshotDictionary = snapshot.value as? NSDictionary {
+                messages = snapshotDictionary.allValues as! Array<String>
+            }
+            success(messages)
         }) { (error) in
             print(error.localizedDescription)
         }

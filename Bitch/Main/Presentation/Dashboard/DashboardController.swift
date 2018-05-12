@@ -49,6 +49,7 @@ class DashboardController: UIViewController {
     
     private func setupButtons() {
         loginButton.readPermissions =  ["public_profile", "email", "user_friends"]
+        loginButton.delegate = viewModel
     }
 }
 

@@ -8,21 +8,16 @@
 
 import UIKit
 import FBSDKLoginKit
+import FirebaseAuth
 
-class DashboardViewModelDefault {
+class DashboardViewModelDefault: NSObject {
     var view: DashboardView?
     var coordinator: AppCoordinator?
 }
 
 extension DashboardViewModelDefault: DashboardViewModel {
     func viewDidLoad() {
-        setupNotifications()
         loadUser()
-    }
-    
-    private func setupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(loadUser), name: NSNotification.Name.FBSDKAccessTokenDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loadUser), name: NSNotification.Name.FBSDKProfileDidChange, object: nil)
     }
     
     func inboxButtonTapped() {
@@ -42,6 +37,36 @@ extension DashboardViewModelDefault: DashboardViewModel {
         }
         else {
             self.view?.removeProfile()
+        }
+    }
+}
+
+extension DashboardViewModelDefault: FBSDKLoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        let firebaseAuth = Auth.auth()
+        do {
+            loadUser()
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        loginToFirebase(credential: FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString))
+    }
+    
+    private func loginToFirebase(credential: AuthCredential) {
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            self.loadUser()
         }
     }
 }
